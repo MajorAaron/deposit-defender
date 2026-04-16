@@ -1,0 +1,207 @@
+/* DepositDefender — Result Card
+ * Owned visual surface: Morgan
+ * Architectural rules (Satori-readiness preserved for v2):
+ *  - flexbox only, no grid
+ *  - explicit pixel sizing only (no rem/em)
+ *  - no CSS gradients
+ *  - no external SVGs/icon fonts (inline only)
+ *  - one display webfont max + system stack body
+ *
+ * Canonical aspect: 4:5 portrait (1080×1350 reference).
+ * All palette values are CSS custom properties — Morgan delivers values, no markup changes.
+ */
+
+:root {
+  /* Morgan's "Legal Pad Meets Receipt Tape" — brand tokens (source of truth) */
+  --brand-bg:      #FAF7EE;   /* legal-pad warm white */
+  --brand-fg:      #15161A;   /* near-black ink */
+  --brand-accent:  #1F6E3C;   /* "your money" green */
+  --brand-warning: #C8341A;   /* "$ at risk" red, used sparingly */
+  --brand-muted:   #6B6862;   /* warm gray, secondary text */
+  --brand-rule:    #D9D2BD;   /* kraft/parchment rule */
+}
+
+.card {
+  /* Card consumes brand tokens — no raw hex below this line */
+  --card-bg:           var(--brand-bg);
+  --card-fg:           var(--brand-fg);
+  --card-accent:       var(--brand-accent);
+  --card-hero-fg:      var(--brand-fg);       /* score = ink, NOT red */
+  --card-warning:      var(--brand-warning);  /* dollars-at-risk only */
+  --card-muted-fg:     var(--brand-muted);
+  --card-watermark-fg: var(--brand-muted);
+  --card-border:       var(--brand-rule);
+  --card-shadow:       0 1px 0 var(--brand-fg);
+
+  --card-width: 1080px;
+  --card-height: 1350px;
+  --card-pad-x: 64px;
+  --card-pad-y: 72px;
+  --card-watermark-pad-r: 48px;
+  --card-watermark-pad-b: 64px;
+}
+
+.card {
+  width: var(--card-width);
+  max-width: 100%;
+  aspect-ratio: 4 / 5;
+  background-color: var(--card-bg);
+  color: var(--card-fg);
+  border: 4px solid var(--card-border);
+  box-shadow: 0 24px 64px var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.card__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px var(--card-pad-x) 0;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--card-muted-fg);
+}
+
+.card__photo {
+  width: 100%;
+  flex: 0 0 auto;
+  height: 540px;
+  object-fit: cover;
+  background-color: #d6cfc1;
+  border-top: 4px solid var(--card-border);
+  border-bottom: 4px solid var(--card-border);
+  margin-top: 24px;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 40px var(--card-pad-x) 0;
+  flex: 1 1 auto;
+}
+
+.card__hero {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.card__hero-score {
+  display: flex;
+  flex-direction: column;
+  color: var(--card-hero-fg);
+}
+
+.card__hero-score-label {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-muted-fg);
+  margin-bottom: 4px;
+}
+
+.card__hero-score-value {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-size: 144px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.card__hero-score-scale {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--card-muted-fg);
+}
+
+.card__hero-money {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.card__hero-money-label {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--card-muted-fg);
+  margin-bottom: 4px;
+}
+
+.card__hero-money-value {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--card-warning);
+  line-height: 1;
+}
+
+.card__finding {
+  border-top: 2px solid var(--card-border);
+  padding-top: 20px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__finding-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--card-accent);
+  margin-bottom: 8px;
+}
+
+.card__finding-text {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--card-fg);
+}
+
+.card__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 var(--card-watermark-pad-r) var(--card-watermark-pad-b) var(--card-pad-x);
+  margin-top: auto;
+  color: var(--card-watermark-fg);
+}
+
+.card__disclaimer {
+  font-size: 11px;
+  line-height: 1.4;
+  max-width: 540px;
+  color: var(--card-muted-fg);
+}
+
+.card__watermark {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.card__watermark-mark {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  background-color: var(--card-accent);
+  border: 2px solid var(--card-border);
+}

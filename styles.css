@@ -1,0 +1,269 @@
+/* DepositDefender — App shell styles
+ * Owned by Casey for layout; --brand-* vars consumed from card.css palette where appropriate.
+ * Morgan: feel free to override --brand-* here once palette lands.
+ */
+
+:root {
+  --brand-bg: var(--card-bg, #FAF7EE);
+  --brand-fg: var(--card-fg, #15161A);
+  --brand-accent: var(--card-accent, #1F6E3C);
+  --brand-warning: var(--card-warning, #C8341A);
+  --brand-muted: var(--card-muted-fg, #6B6862);
+  --brand-border: var(--card-border, #D9D2BD);
+
+  --shell-max-width: 720px;
+  --shell-pad-x: 24px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--brand-bg);
+  color: var(--brand-fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  max-width: var(--shell-max-width);
+  margin: 0 auto;
+  padding: 32px var(--shell-pad-x) 80px;
+}
+
+.masthead {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.masthead__brand {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--brand-fg);
+  text-decoration: none;
+}
+
+.masthead__nav a {
+  color: var(--brand-muted);
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.hero {
+  margin-bottom: 32px;
+}
+
+.hero__eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  margin-bottom: 12px;
+}
+
+.hero__title {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.hero__sub {
+  font-size: 18px;
+  color: var(--brand-muted);
+  margin: 0;
+  max-width: 56ch;
+}
+
+.dropzone {
+  border: 3px dashed var(--brand-border);
+  background-color: rgba(0, 0, 0, 0.02);
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.12s ease-in-out;
+}
+
+.dropzone:hover,
+.dropzone--active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dropzone__primary {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.dropzone__hint {
+  font-size: 14px;
+  color: var(--brand-muted);
+}
+
+.dropzone__privacy {
+  display: block;
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--brand-muted);
+}
+
+.dropzone input[type="file"] {
+  display: none;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brand-accent);
+  color: #ffffff;
+  border: 3px solid var(--brand-border);
+  padding: 14px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button--ghost {
+  background-color: transparent;
+  color: var(--brand-fg);
+}
+
+.status {
+  margin-top: 24px;
+  padding: 16px;
+  border: 2px solid var(--brand-border);
+  background-color: #fff;
+  font-size: 15px;
+}
+
+.status--error {
+  border-color: var(--brand-accent);
+  color: var(--brand-accent);
+}
+
+.result {
+  margin-top: 40px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result--active {
+  display: flex;
+}
+
+.result__cta {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.email-gate {
+  margin-top: 32px;
+  padding: 24px;
+  border: 3px solid var(--brand-border);
+  background-color: rgba(0, 0, 0, 0.03);
+  display: none;
+  flex-direction: column;
+}
+
+.email-gate--active {
+  display: flex;
+}
+
+.email-gate__title {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.email-gate__sub {
+  font-size: 14px;
+  color: var(--brand-muted);
+  margin: 0 0 16px;
+}
+
+.email-gate__row {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.email-gate input[type="email"] {
+  flex: 1 1 auto;
+  border: 2px solid var(--brand-border);
+  padding: 12px;
+  font-size: 16px;
+  background-color: #fff;
+  color: var(--brand-fg);
+}
+
+.history {
+  margin-top: 64px;
+  border-top: 2px solid var(--brand-border);
+  padding-top: 24px;
+}
+
+.history__title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-muted);
+  margin-bottom: 16px;
+}
+
+.history__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px 16px;
+  background-color: #fff;
+  border: 1px solid var(--brand-border);
+  font-size: 14px;
+}
+
+.history__item-score {
+  font-family: "Instrument Serif", ui-serif, Georgia, serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--brand-accent);
+}
+
+@media (max-width: 600px) {
+  .hero__title { font-size: 34px; }
+  .card { transform: scale(0.94); transform-origin: top center; }
+}

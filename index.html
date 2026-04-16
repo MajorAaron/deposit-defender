@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DepositDefender — Photograph every defect. Keep every dollar.</title>
+  <meta name="description" content="Snap photos of every defect on move-in day. AI generates a timestamped, legally-worded damage log and a Deposit Defense Score so you can push back with receipts." />
+
+  <meta property="og:title" content="DepositDefender — The receipt your landlord doesn't want you to take." />
+  <meta property="og:description" content="Document your apartment in 10 minutes. Get a Deposit Defense Score and the legal-language log to back it up." />
+  <meta property="og:image" content="/og.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://deposit-defender.majorsolutions.studio/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DepositDefender — Photograph every defect. Keep every dollar." />
+  <meta name="twitter:description" content="The receipt your landlord doesn't want you to take." />
+  <meta name="twitter:image" content="/og.png" />
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/card.css" />
+  <link rel="stylesheet" href="/landing.css" />
+</head>
+<body>
+  <a class="skip-link" href="#capture">Skip to upload</a>
+
+  <header class="masthead">
+    <a href="/" class="masthead__brand">
+      <img src="/logo.png" alt="DepositDefender" class="masthead__logo" onerror="this.style.display='none'" />
+      <span class="masthead__wordmark">DepositDefender</span>
+    </a>
+    <nav class="masthead__nav" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#proof">Why now</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/tool.html" class="masthead__cta">Open the tool</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__rule" aria-hidden="true">VOL. I &nbsp;·&nbsp; ISSUE 01 &nbsp;·&nbsp; A TENANT'S DOCUMENT</div>
+      <h1 class="hero__title">Photograph every defect.<br/><em>Keep every dollar.</em></h1>
+      <p class="hero__sub">The receipt your landlord doesn't want you to take. Snap your move-in walkthrough, get a Deposit Defense Score, and a legal-language log entry for the record &mdash; before you sign anything.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="/tool.html">Defend my deposit &rarr;</a>
+        <a class="btn btn--ghost" href="#how">See how it works</a>
+      </div>
+      <p class="hero__meta">Free. No account needed. Works on the phone in your hand.</p>
+    </section>
+
+    <!-- Credibility strip — CA AB 2801 parity headline -->
+    <aside class="strip" id="proof">
+      <div class="strip__inner">
+        <span class="strip__eyebrow">Why now</span>
+        <p class="strip__lede">California now requires landlords to do this. <em>Why aren&rsquo;t you?</em></p>
+        <p class="strip__body">As of July 1, 2025, California <a href="https://leginfo.legislature.ca.gov/" target="_blank" rel="noopener">AB&nbsp;2801</a> obligates landlords to take high-resolution, date-stamped photographs before move-in and after move-out. Other states are following. DepositDefender brings the same documentation standard to your side of the lease.</p>
+      </div>
+    </aside>
+
+    <!-- How it works -->
+    <section class="how" id="how">
+      <h2 class="section-title">How it works</h2>
+      <ol class="how__steps">
+        <li class="how__step">
+          <span class="how__num">01</span>
+          <h3 class="how__h">Walk the apartment.</h3>
+          <p class="how__p">Phone in hand on move-in day. Snap every scuff, stain, gap, and crack &mdash; ten minutes is plenty.</p>
+        </li>
+        <li class="how__step">
+          <span class="how__num">02</span>
+          <h3 class="how__h">Upload to DepositDefender.</h3>
+          <p class="how__p">We score your <em>Deposit Defense Score</em> 0&ndash;100, estimate dollars at risk, and generate a legal-language log entry your landlord can&rsquo;t pretend they didn&rsquo;t see.</p>
+        </li>
+        <li class="how__step">
+          <span class="how__num">03</span>
+          <h3 class="how__h">Send it before you sign.</h3>
+          <p class="how__p">Email the documented walkthrough to your landlord on day one. When move-out comes, you&rsquo;ve already won the dispute.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Email capture / tool teaser -->
+    <section class="capture" id="capture">
+      <div class="capture__inner">
+        <span class="capture__eyebrow">Free move-in tool</span>
+        <h2 class="capture__title">Try the score on one photo. <em>It&rsquo;s free.</em></h2>
+        <p class="capture__sub">Drop a photo of any defect &mdash; cracked tile, scuffed wall, stained carpet &mdash; and we&rsquo;ll score what your landlord could realistically charge for it. Email optional.</p>
+        <form id="landing-email-form" class="capture__form" novalidate>
+          <input
+            type="email"
+            id="landing-email"
+            name="email"
+            placeholder="you@example.com"
+            aria-label="Your email"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" class="btn btn--primary" id="landing-submit">Open the tool &rarr;</button>
+        </form>
+        <p class="capture__hint">Photos are processed in-memory. Location data stripped before storage. We never see where you live.</p>
+        <p class="capture__status" id="landing-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+      <h2 class="section-title">Pricing</h2>
+      <div class="pricing__grid">
+        <article class="tier">
+          <h3 class="tier__name">Free</h3>
+          <p class="tier__price"><span class="tier__amount">$0</span></p>
+          <ul class="tier__list">
+            <li>One photo, one score</li>
+            <li>Top finding + log-entry sentence</li>
+            <li>Shareable result card</li>
+          </ul>
+          <a class="btn btn--ghost btn--full" href="/tool.html">Try the score</a>
+        </article>
+        <article class="tier tier--featured">
+          <span class="tier__badge">Move-in pack</span>
+          <h3 class="tier__name">Tenant Pack</h3>
+          <p class="tier__price"><span class="tier__amount">$29</span><span class="tier__per">one-time</span></p>
+          <ul class="tier__list">
+            <li>10&ndash;15 photos, full report</li>
+            <li>Timestamped PDF addendum</li>
+            <li>Auto-emailed to landlord on CC</li>
+            <li>State-specific legal language</li>
+          </ul>
+          <a class="btn btn--primary btn--full" href="/tool.html?tier=tenant">Defend $1,400+</a>
+        </article>
+        <article class="tier">
+          <h3 class="tier__name">Landlord Report</h3>
+          <p class="tier__price"><span class="tier__amount">$19</span><span class="tier__per">per unit</span></p>
+          <ul class="tier__list">
+            <li>Move-out condition report</li>
+            <li>AB 2801&ndash;ready documentation</li>
+            <li>Per-unit timestamped record</li>
+          </ul>
+          <a class="btn btn--ghost btn--full" href="/tool.html?tier=landlord">For property managers</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="foot">
+      <div class="foot__rule" aria-hidden="true"></div>
+      <div class="foot__inner">
+        <p class="foot__brand">DepositDefender &mdash; <em>Photograph every defect. Keep every dollar.</em></p>
+        <p class="foot__legal">DepositDefender is a documentation tool, not a legal service. Output is informational. For binding correspondence with your landlord, consult a tenant-rights attorney or local legal aid.</p>
+        <p class="foot__meta">&copy; 2026 Major Solutions Studio &middot; <a href="/tool.html">Open the tool</a></p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="/landing.js" defer></script>
+</body>
+</html>
