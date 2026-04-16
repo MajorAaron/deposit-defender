@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /tool.html
+Allow: /state/
+Allow: /guide/
+Disallow: /share/
+Disallow: /api/
+Disallow: /.netlify/
+
+Sitemap: https://deposit-defender.majorsolutions.studio/sitemap.xml
